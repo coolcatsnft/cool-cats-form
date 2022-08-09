@@ -29,6 +29,13 @@ function Form({ form }) {
     <Page>
       <FormWrapper>
         <Header1>{form.title}</Header1>
+        <Callout>
+          <p>Thank you for your interest in a partnership with the Cool Cats! We're excited that you are considering working with us! Cool Cats are a multigenerational and family friendly brand.</p>
+          <p>As such, we are interested in partnering with projects and brands that can add value to our community.</p>
+          <p>We prefer to align ourselves with others who understand and appreciate that our community is inclusive, diverse and that we strive for positivity through family friendly, cute and cool content.</p>
+          <p>Please fill out the following form and if there is alignment, we will reach out. Thank you!</p>
+        </Callout>
+
         <FormBorder>
           <iframe title={form.slug} src={`https://docs.google.com/forms/d/e/${form.id}/viewform?embedded=true`} width="100%" height="800px" frameBorder="0" marginHeight="0" marginWidth="0">Loading...</iframe>
         </FormBorder>
@@ -118,6 +125,27 @@ const FormWrapper = styled.div`
   }
 `;
 
+const Callout = styled.div`
+  padding: var(--global-spacing);
+  margin-bottom: var(--global-spacing);
+
+  @media ${device.tablet} {
+    border: var(--global-spacing) solid #e9e9e9;
+    border-radius: var(--global-border-radius);
+    background-color: #f7f7f7;
+    border-color: var(--global-border-color);
+  }
+
+  > p {
+    &:first-of-type {
+      margin-top: 0;
+    }
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+`;
+
 const FormBorder = styled.div`
   width: 100%;
   min-height: 100vh;
@@ -180,6 +208,7 @@ const Header1 = styled.h1`
 
   @media ${device.tablet} {
     color: var(--header-tablet);
+    -webkit-text-stroke: 1px var(--text-secondary);
   }
 `;
 
